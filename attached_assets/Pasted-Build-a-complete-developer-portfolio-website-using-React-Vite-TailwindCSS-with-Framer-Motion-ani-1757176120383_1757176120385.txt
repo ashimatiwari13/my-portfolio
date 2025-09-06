@@ -1,0 +1,230 @@
+Build a complete developer portfolio website using React + Vite + TailwindCSS with Framer Motion animations and a dark, developer-themed design. The portfolio should look modern, professional, and fully responsive. Use the exact details, text, and links provided below.
+
+
+---
+
+Project Requirements
+
+Framework: React + Vite
+
+Styling: TailwindCSS (dark theme with neon purple & indigo accents)
+
+Animations: Framer Motion for smooth fade, slide, and hover effects
+
+Contact Form: Integrated with EmailJS (use placeholders for SERVICE_ID, TEMPLATE_ID, USER_ID)
+
+Responsive Design: Mobile-first, optimized for all screen sizes
+
+Links: Use the links exactly as given below
+
+
+
+---
+
+Portfolio Sections & Content
+
+1. Header / Navbar
+
+Fixed at the top
+
+Links: About | Skills | Projects | Achievements | Contact
+
+Include GitHub & LinkedIn icons linked to:
+
+GitHub → https://github.com/ashimatiwari13
+
+LinkedIn → https://www.linkedin.com/in/ashima-tiwari-259b312a8/
+
+
+
+
+---
+
+2. Hero Section
+
+Name: Ashima Tiwari
+
+Tagline: Frontend Developer | Software Developer
+
+Buttons:
+
+Contact Me → scrolls to Contact Form
+
+View Projects → scrolls to Projects
+
+
+Background: Dark gradient + animated developer aesthetic (neon grid, abstract lines, or code-inspired patterns).
+
+
+
+---
+
+3. About Me
+
+Hi, I’m Ashima 👋 — a Computer Science undergrad who loves turning ideas into interactive and meaningful digital experiences. Whether it’s crafting sleek user interfaces or solving tough programming problems, I enjoy building projects that combine creativity with technology. Always eager to learn, experiment, and contribute to impactful solutions.
+
+
+---
+
+4. Education
+
+Government Mahila Engineering College, Ajmer
+B.Tech in Computer Science (2022–2026)
+CGPA: 8.53 / 10
+
+
+
+---
+
+5. Skills (Use badges or cards)
+
+Programming: C++, Python, SQL
+
+Frontend & Tools: React, TailwindCSS, Git, GitHub
+
+Fundamentals: DBMS, OOP, Computer Networks, Cloud Computing, Operating Systems
+
+
+
+---
+
+6. Certifications (Clickable cards opening links in a new tab)
+
+Accenture — Software Engineering Virtual Experience
+Link: https://drive.google.com/file/d/1GmBJYgwz0vHJgK3sKcStm4y7rryP6o5F/view
+
+AWS — Solutions Architecture Job Simulation
+Link: https://drive.google.com/file/d/1f3EHvv7p2LQaDTQ6jNu2pG3Aw445cIJ9/view
+
+Cisco — Introduction to Cybersecurity
+Link: https://drive.google.com/file/d/1Gih-S1FYvvT2LWmAiSFrMhQgZyPDaKPk/view
+
+Udemy — Python for Beginners
+Link: https://www.udemy.com/certificate/UC-f59d0746-4aef-4a2b-bd86-4a1dd58105ad/
+
+
+
+---
+
+7. Experience (Styled timeline/cards)
+
+AI & Cloud Intern — Edunet Foundation
+(Jul 2025 – Aug 2025)
+
+Hands-on with IBM Cloud, AutoAI, EDA, and Chatbot Development
+
+Built & presented capstone AI/ML project
+
+Completed AICTE-recognized internship focused on AI, Cloud Computing, and Data Analytics
+
+
+Frontend Development Trainee — DIIT Institute
+(Jun 2024 – Aug 2024)
+
+Learned HTML, CSS, and JavaScript deeply
+
+Built responsive websites & interactive components
+
+
+
+---
+
+8. Projects (Cards with hover animations)
+
+Predicting Early Stages of Alzheimer’s Disease
+Tech: Python, Scikit-learn, Matplotlib
+Code Link: https://github.com/ashimatiwari13/PREDICTING-EARLY-STAGES-OF-ALZHEIMER-S-DISEASE
+
+Personal Portfolio
+Tech: React.js
+Code Link: https://github.com/ashimatiwari13/ashimatiwari-portfolio
+
+Travel AI Agent
+Tech: IBM Cloud Lite, Watsonx.ai
+Code Link: https://github.com/ashimatiwari13/TravelAI-Agent
+
+
+
+---
+
+9. Achievements
+
+🎯 Ranked Top 100 out of 500+ teams — Codex 2.0 Hackathon
+
+🏅 Finalist — Simplify AI Tools Hackathon
+
+
+
+---
+
+10. Contact Section
+
+Email: ashimatiwari013@gmail.com
+
+GitHub: https://github.com/ashimatiwari13
+
+LinkedIn: https://www.linkedin.com/in/ashima-tiwari-259b312a8/
+
+
+Contact Form:
+
+Fields: Name, Email, Message
+
+Connect form to EmailJS (use placeholders for IDs)
+
+Show success/failure alerts after submission
+
+
+
+---
+
+11. Footer
+
+© 2025 Ashima Tiwari. All rights reserved.
+
+
+---
+
+Design & Styling Guidelines
+
+Dark, futuristic theme → black/gray base with neon-indigo & purple highlights
+
+Animated developer background → neon lines, grids, or abstract tech shapes
+
+Smooth scrolling enabled
+
+Project cards → hover effects with subtle scaling and shadows
+
+Responsive layout for mobile, tablet, and desktop
+
+All external links should open in a new tab
+
+
+
+---
+
+Required Links (Use Exactly as Given)
+
+GitHub: https://github.com/ashimatiwari13
+
+LinkedIn: https://www.linkedin.com/in/ashima-tiwari-259b312a8/
+
+Email: ashimatiwari013@gmail.com
+
+Accenture Certificate: https://drive.google.com/file/d/1GmBJYgwz0vHJgK3sKcStm4y7rryP6o5F/view
+
+AWS Certificate: https://drive.google.com/file/d/1f3EHvv7p2LQaDTQ6jNu2pG3Aw445cIJ9/view
+
+Cisco Certificate: https://drive.google.com/file/d/1Gih-S1FYvvT2LWmAiSFrMhQgZyPDaKPk/view
+
+Udemy Certificate: https://www.udemy.com/certificate/UC-f59d0746-4aef-4a2b-bd86-4a1dd58105ad/
+
+Alzheimer’s Project: https://github.com/ashimatiwari13/PREDICTING-EARLY-STAGES-OF-ALZHEIMER-S-DISEASE
+
+Portfolio Project: https://github.com/ashimatiwari13/ashimatiwari-portfolio
+
+Travel AI Agent: https://github.com/ashimatiwari13/TravelAI-Agent
+
+
+
+---
