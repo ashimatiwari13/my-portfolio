@@ -43,6 +43,32 @@ export default function HeroSection() {
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       <div className="tech-grid absolute inset-0 opacity-30"></div>
+      
+      {/* Terminal-style welcome message */}
+      <div className="absolute top-24 left-8 terminal-window max-w-md hidden lg:block">
+        <div className="terminal-header">
+          <div className="terminal-dots">
+            <div className="terminal-dot red"></div>
+            <div className="terminal-dot yellow"></div>
+            <div className="terminal-dot green"></div>
+          </div>
+          <div className="terminal-title">welcome.sh</div>
+        </div>
+        <div className="terminal-content text-sm">
+          <div className="terminal-line">
+            <span className="terminal-prompt">$</span>
+            <span className="terminal-command"> whoami</span>
+          </div>
+          <div className="terminal-line terminal-output">ashima_tiwari</div>
+          <div className="terminal-line">
+            <span className="terminal-prompt">$</span>
+            <span className="terminal-command"> echo $ROLE</span>
+          </div>
+          <div className="terminal-line terminal-output">Full-Stack Developer</div>
+          <div className="terminal-line terminal-comment"># Ready to build amazing things! 🚀</div>
+        </div>
+      </div>
+      
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}

@@ -42,7 +42,7 @@ export default function ProjectsSection() {
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
-              className="glass-effect rounded-xl p-6 neon-border transition-all duration-300"
+              className="terminal-window"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -54,42 +54,61 @@ export default function ProjectsSection() {
               }}
               data-testid={`card-project-${index}`}
             >
-              <div className="text-center mb-4">
-                <motion.i 
-                  className={`${project.icon} text-4xl ${project.color} mb-4`}
-                  whileHover={{ scale: 1.2, rotate: 5 }}
-                ></motion.i>
+              <div className="terminal-header">
+                <div className="terminal-dots">
+                  <div className="terminal-dot red"></div>
+                  <div className="terminal-dot yellow"></div>
+                  <div className="terminal-dot green"></div>
+                </div>
+                <div className="terminal-title">{project.title.toLowerCase().replace(/\s+/g, '_')}.git</div>
               </div>
-              
-              <h3 className="text-xl font-semibold mb-3 text-center">
-                {project.title}
-              </h3>
-              
-              <div className="flex flex-wrap gap-2 justify-center mb-4">
-                {project.technologies.map((tech) => (
-                  <motion.span
-                    key={tech}
-                    className="skill-badge px-3 py-1 rounded-full text-xs"
-                    whileHover={{ scale: 1.05 }}
-                    data-testid={`badge-tech-${tech.toLowerCase().replace(/\s+/g, '-')}`}
-                  >
-                    {tech}
-                  </motion.span>
-                ))}
-              </div>
-              
-              <div className="text-center">
+              <div className="terminal-content">
+                <div className="git-commit mb-3">
+                  <span className="git-hash">#{(index + 1).toString().padStart(7, '0')}</span>
+                  <span className="git-message">{project.title}</span>
+                </div>
+                
+                <div className="console-log mb-3">
+                  <span className="log-level log-info">[REPO]</span>
+                  <motion.i 
+                    className={`${project.icon} ${project.color} mr-2`}
+                    whileHover={{ scale: 1.2, rotate: 5 }}
+                  ></motion.i>
+                  <span className="text-sm">{project.title}</span>
+                </div>
+                
+                <div className="terminal-line mb-3">
+                  <span className="terminal-prompt">$</span>
+                  <span className="terminal-command"> git log --oneline</span>
+                </div>
+                
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.technologies.map((tech) => (
+                    <motion.span
+                      key={tech}
+                      className="skill-badge px-3 py-1 rounded-full text-xs"
+                      whileHover={{ scale: 1.05 }}
+                      data-testid={`badge-tech-${tech.toLowerCase().replace(/\s+/g, '-')}`}
+                    >
+                      {tech}
+                    </motion.span>
+                  ))}
+                </div>
+                
+                <div className="terminal-line">
+                  <span className="terminal-prompt">$</span>
+                  <span className="terminal-command"> git remote -v</span>
+                </div>
                 <motion.a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`inline-flex items-center ${project.color} hover:opacity-80 transition-colors`}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  className={`terminal-output hover:underline text-sm block mt-1`}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                   data-testid={`link-project-code-${index}`}
                 >
-                  <i className="fab fa-github mr-2"></i>
-                  View Code
+                  origin  {project.link} (fetch)
                 </motion.a>
               </div>
             </motion.div>
