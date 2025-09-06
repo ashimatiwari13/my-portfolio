@@ -22,10 +22,18 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <motion.div 
-            className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
-            whileHover={{ scale: 1.05 }}
+            className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent border-2 border-primary/50 rounded-lg px-3 py-1 relative overflow-hidden"
+            whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(99, 102, 241, 0.5)" }}
+            whileTap={{ scale: 0.95 }}
+            style={{ fontFamily: 'monospace' }}
           >
-            Ashima Tiwari
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10"
+              initial={{ x: '-100%' }}
+              whileHover={{ x: '100%' }}
+              transition={{ duration: 0.6 }}
+            />
+            <span className="relative z-10">AT</span>
           </motion.div>
           
           <div className="hidden md:flex space-x-8">

@@ -24,14 +24,26 @@ export default function ContactSection() {
     setIsSubmitting(true);
 
     try {
-      // EmailJS integration would go here
-      // For now, using a mock implementation
-      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_placeholder";
-      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_placeholder";
-      const userId = import.meta.env.VITE_EMAILJS_USER_ID || "user_placeholder";
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const userId = import.meta.env.VITE_EMAILJS_USER_ID;
 
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      if (!serviceId || !templateId || !userId) {
+        throw new Error("EmailJS configuration missing");
+      }
+
+      // Use EmailJS to send the email
+      await (window as any).emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_name: "Ashima Tiwari",
+        },
+        userId
+      );
 
       // Reset form
       setFormData({ name: "", email: "", message: "" });
@@ -42,6 +54,7 @@ export default function ContactSection() {
         variant: "default",
       });
     } catch (error) {
+      console.error("EmailJS Error:", error);
       toast({
         title: "Error",
         description: "Failed to send message. Please try again.",
