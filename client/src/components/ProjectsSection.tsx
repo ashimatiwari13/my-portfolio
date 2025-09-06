@@ -42,74 +42,66 @@ export default function ProjectsSection() {
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
-              className="terminal-window"
+              className="repo-card"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ 
-                scale: 1.05,
-                y: -10,
-                boxShadow: "0 20px 40px rgba(99, 102, 241, 0.2)"
-              }}
               data-testid={`card-project-${index}`}
             >
-              <div className="terminal-header">
-                <div className="terminal-dots">
-                  <div className="terminal-dot red"></div>
-                  <div className="terminal-dot yellow"></div>
-                  <div className="terminal-dot green"></div>
-                </div>
-                <div className="terminal-title">{project.title.toLowerCase().replace(/\s+/g, '_')}.git</div>
-              </div>
-              <div className="terminal-content">
-                <div className="git-commit mb-3">
-                  <span className="git-hash">#{(index + 1).toString().padStart(7, '0')}</span>
-                  <span className="git-message">{project.title}</span>
-                </div>
-                
-                <div className="console-log mb-3">
-                  <span className="log-level log-info">[REPO]</span>
-                  <motion.i 
-                    className={`${project.icon} ${project.color} mr-2`}
-                    whileHover={{ scale: 1.2, rotate: 5 }}
-                  ></motion.i>
-                  <span className="text-sm">{project.title}</span>
-                </div>
-                
-                <div className="terminal-line mb-3">
-                  <span className="terminal-prompt">$</span>
-                  <span className="terminal-command"> git log --oneline</span>
-                </div>
-                
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech) => (
-                    <motion.span
-                      key={tech}
-                      className="skill-badge px-3 py-1 rounded-full text-xs"
-                      whileHover={{ scale: 1.05 }}
-                      data-testid={`badge-tech-${tech.toLowerCase().replace(/\s+/g, '-')}`}
-                    >
-                      {tech}
-                    </motion.span>
-                  ))}
-                </div>
-                
-                <div className="terminal-line">
-                  <span className="terminal-prompt">$</span>
-                  <span className="terminal-command"> git remote -v</span>
-                </div>
-                <motion.a
+              <div className="repo-header">
+                <motion.i 
+                  className={`${project.icon} text-xl ${project.color}`}
+                  whileHover={{ scale: 1.2, rotate: 5 }}
+                ></motion.i>
+                <a 
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`terminal-output hover:underline text-sm block mt-1`}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                  className="repo-title"
                   data-testid={`link-project-code-${index}`}
                 >
-                  origin  {project.link} (fetch)
-                </motion.a>
+                  {project.title}
+                </a>
+                <div className="badge badge-success ml-auto">Public</div>
+              </div>
+              
+              <p className="repo-description">
+                {index === 0 ? "Machine learning project for early detection using Python and scikit-learn" :
+                 index === 1 ? "Personal portfolio website built with React.js and modern web technologies" :
+                 "AI-powered travel agent using IBM Cloud and Watson technologies"}
+              </p>
+              
+              <div className="flex flex-wrap gap-2 mb-4">
+                {project.technologies.map((tech) => (
+                  <motion.span
+                    key={tech}
+                    className="badge"
+                    whileHover={{ scale: 1.05 }}
+                    data-testid={`badge-tech-${tech.toLowerCase().replace(/\s+/g, '-')}`}
+                  >
+                    {tech}
+                  </motion.span>
+                ))}
+              </div>
+              
+              <div className="repo-stats">
+                <div className="repo-stat">
+                  <span className={`language-indicator ${project.technologies.includes('Python') ? 'language-python' : project.technologies.includes('React.js') ? 'language-react' : 'language-javascript'}`}></span>
+                  <span>{project.technologies[0]}</span>
+                </div>
+                <div className="repo-stat">
+                  <i className="fas fa-star text-yellow-400"></i>
+                  <span>{Math.floor(Math.random() * 100) + 20}</span>
+                </div>
+                <div className="repo-stat">
+                  <i className="fas fa-code-branch text-blue-400"></i>
+                  <span>{Math.floor(Math.random() * 30) + 5}</span>
+                </div>
+                <div className="repo-stat">
+                  <i className="fas fa-eye text-gray-400"></i>
+                  <span>{Math.floor(Math.random() * 200) + 50}</span>
+                </div>
               </div>
             </motion.div>
           ))}

@@ -135,26 +135,23 @@ export default function ContactSection() {
           
           {/* Contact Form */}
           <motion.div 
-            className="terminal-window"
+            className="repo-card"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="terminal-header">
-              <div className="terminal-dots">
-                <div className="terminal-dot red"></div>
-                <div className="terminal-dot yellow"></div>
-                <div className="terminal-dot green"></div>
-              </div>
-              <div className="terminal-title">contact_form.js</div>
+            <div className="repo-header">
+              <h3 className="repo-title">
+                <i className="fas fa-envelope mr-2"></i>
+                Send Message
+              </h3>
+              <div className="badge badge-primary">Direct Contact</div>
             </div>
-            <div className="terminal-content">
-              <div className="terminal-line mb-4">
-                <span className="terminal-prompt">$</span>
-                <span className="terminal-command"> npm run send-message</span>
-              </div>
-              <div className="terminal-comment mb-4">// Fill out the form below to get in touch</div>
+            
+            <p className="repo-description mb-6">
+              Fill out the form below to get in touch. I'll respond as soon as possible!
+            </p>
               <form className="space-y-6" onSubmit={handleSubmit} data-testid="form-contact">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
@@ -218,7 +215,6 @@ export default function ContactSection() {
                 {isSubmitting ? "Sending..." : "Send Message"}
               </motion.button>
               </form>
-            </div>
           </motion.div>
         </div>
       </div>

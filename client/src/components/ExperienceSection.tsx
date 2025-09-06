@@ -58,40 +58,47 @@ export default function ExperienceSection() {
                 
                 <div className={`ml-12 md:ml-0 ${index % 2 === 0 ? 'md:w-1/2 md:pr-8' : 'md:w-1/2 md:ml-1/2 md:pl-8'}`}>
                   <motion.div 
-                    className="terminal-window"
+                    className="repo-card"
                     whileHover={{ scale: 1.02 }}
                     data-testid={`card-experience-${index}`}
                   >
-                    <div className="terminal-header">
-                      <div className="terminal-dots">
-                        <div className="terminal-dot red"></div>
-                        <div className="terminal-dot yellow"></div>
-                        <div className="terminal-dot green"></div>
+                    <div className="repo-header">
+                      <h3 className={`repo-title ${index % 2 === 0 ? 'text-primary' : 'text-secondary'}`}>
+                        {exp.title}
+                      </h3>
+                      <div className="badge badge-success">
+                        {exp.period.split(' – ')[1] === '2025' ? 'Current' : 'Completed'}
                       </div>
-                      <div className="terminal-title">experience_{index + 1}.log</div>
                     </div>
-                    <div className="terminal-content">
-                      <div className="git-commit">
-                        <span className="git-hash">#{(index + 1).toString().padStart(3, '0')}</span>
-                        <span className="git-message">{exp.title}</span>
+                    
+                    <div className="repo-description mb-4">
+                      <div className={`text-lg font-semibold mb-2 ${index % 2 === 0 ? 'text-secondary' : 'text-accent'}`}>
+                        {exp.company}
                       </div>
-                      <div className="console-log">
-                        <span className="log-level log-info">[INFO]</span>
-                        <span className={index % 2 === 0 ? 'text-secondary' : 'text-accent'}>
-                          {exp.company}
-                        </span>
+                      <div className="text-sm text-muted-foreground mb-3">{exp.period}</div>
+                    </div>
+                    
+                    <div className="space-y-2">
+                      {exp.points.map((point, pointIndex) => (
+                        <div key={pointIndex} className="flex items-start gap-2">
+                          <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-muted-foreground text-sm">{point}</span>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <div className="repo-stats mt-4">
+                      <div className="repo-stat">
+                        <i className="fas fa-building text-blue-400"></i>
+                        <span>Experience</span>
                       </div>
-                      <div className="console-log">
-                        <span className="log-level log-warn">[DURATION]</span>
-                        <span>{exp.period}</span>
+                      <div className="repo-stat">
+                        <i className="fas fa-calendar text-green-400"></i>
+                        <span>{exp.period.split(' – ').length > 1 ? '2 months' : '3 months'}</span>
                       </div>
-                      <div className="mt-4">
-                        {exp.points.map((point, pointIndex) => (
-                          <div key={pointIndex} className="console-log">
-                            <span className="log-level log-success">[ACHIEVEMENT]</span>
-                            <span>{point}</span>
-                          </div>
-                        ))}
+                      <div className="repo-stat">
+                        <i className="fas fa-tasks text-purple-400"></i>
+                        <span>{exp.points.length} achievements</span>
                       </div>
                     </div>
                   </motion.div>

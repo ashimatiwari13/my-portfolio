@@ -36,39 +36,51 @@ export default function SkillsSection() {
           {skillCategories.map((category, index) => (
             <motion.div 
               key={category.title}
-              className="terminal-window"
+              className="repo-card"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.02 }}
               data-testid={`card-skills-${category.title.toLowerCase().replace(/\s+/g, '-')}`}
             >
-              <div className="terminal-header">
-                <div className="terminal-dots">
-                  <div className="terminal-dot red"></div>
-                  <div className="terminal-dot yellow"></div>
-                  <div className="terminal-dot green"></div>
+              <div className="repo-header">
+                <h3 className={`repo-title ${category.color}`}>
+                  {category.title}
+                </h3>
+                <div className="badge badge-primary">
+                  {category.skills.length} skills
                 </div>
-                <div className="terminal-title">{category.title.toLowerCase().replace(/\s+/g, '_')}.js</div>
               </div>
-              <div className="terminal-content">
-                <div className="terminal-line">
-                  <span className="terminal-prompt">$</span>
-                  <span className="terminal-command"> npm list --skills</span>
+              
+              <p className="repo-description">
+                Essential technologies and tools I use for {category.title.toLowerCase()}
+              </p>
+              
+              <div className="flex flex-wrap gap-3 mb-4">
+                {category.skills.map((skill) => (
+                  <motion.span
+                    key={skill}
+                    className="badge"
+                    whileHover={{ scale: 1.05 }}
+                    data-testid={`badge-skill-${skill.toLowerCase().replace(/\s+/g, '-')}`}
+                  >
+                    {skill}
+                  </motion.span>
+                ))}
+              </div>
+              
+              <div className="repo-stats">
+                <div className="repo-stat">
+                  <span className={`language-indicator ${index === 0 ? 'language-javascript' : index === 1 ? 'language-react' : 'language-python'}`}></span>
+                  <span>Primary</span>
                 </div>
-                <div className="terminal-line terminal-comment">// Available skills:</div>
-                <div className="flex flex-wrap gap-3 mt-3">
-                  {category.skills.map((skill) => (
-                    <motion.span
-                      key={skill}
-                      className="skill-badge px-4 py-2 rounded-full text-sm font-medium"
-                      whileHover={{ scale: 1.05 }}
-                      data-testid={`badge-skill-${skill.toLowerCase().replace(/\s+/g, '-')}`}
-                    >
-                      {skill}
-                    </motion.span>
-                  ))}
+                <div className="repo-stat">
+                  <i className="fas fa-star text-yellow-400"></i>
+                  <span>{Math.floor(Math.random() * 50) + 10}</span>
+                </div>
+                <div className="repo-stat">
+                  <i className="fas fa-code-branch text-blue-400"></i>
+                  <span>{Math.floor(Math.random() * 20) + 5}</span>
                 </div>
               </div>
             </motion.div>
