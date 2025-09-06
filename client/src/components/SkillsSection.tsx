@@ -36,7 +36,7 @@ export default function SkillsSection() {
           {skillCategories.map((category, index) => (
             <motion.div 
               key={category.title}
-              className="glass-effect rounded-xl p-6 neon-border"
+              className="terminal-window"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -44,20 +44,32 @@ export default function SkillsSection() {
               whileHover={{ scale: 1.02 }}
               data-testid={`card-skills-${category.title.toLowerCase().replace(/\s+/g, '-')}`}
             >
-              <h3 className={`text-xl font-semibold mb-4 ${category.color}`}>
-                {category.title}
-              </h3>
-              <div className="flex flex-wrap gap-3">
-                {category.skills.map((skill) => (
-                  <motion.span
-                    key={skill}
-                    className="skill-badge px-4 py-2 rounded-full text-sm font-medium"
-                    whileHover={{ scale: 1.05 }}
-                    data-testid={`badge-skill-${skill.toLowerCase().replace(/\s+/g, '-')}`}
-                  >
-                    {skill}
-                  </motion.span>
-                ))}
+              <div className="terminal-header">
+                <div className="terminal-dots">
+                  <div className="terminal-dot red"></div>
+                  <div className="terminal-dot yellow"></div>
+                  <div className="terminal-dot green"></div>
+                </div>
+                <div className="terminal-title">{category.title.toLowerCase().replace(/\s+/g, '_')}.js</div>
+              </div>
+              <div className="terminal-content">
+                <div className="terminal-line">
+                  <span className="terminal-prompt">$</span>
+                  <span className="terminal-command"> npm list --skills</span>
+                </div>
+                <div className="terminal-line terminal-comment">// Available skills:</div>
+                <div className="flex flex-wrap gap-3 mt-3">
+                  {category.skills.map((skill) => (
+                    <motion.span
+                      key={skill}
+                      className="skill-badge px-4 py-2 rounded-full text-sm font-medium"
+                      whileHover={{ scale: 1.05 }}
+                      data-testid={`badge-skill-${skill.toLowerCase().replace(/\s+/g, '-')}`}
+                    >
+                      {skill}
+                    </motion.span>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}

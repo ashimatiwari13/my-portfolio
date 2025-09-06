@@ -58,22 +58,42 @@ export default function ExperienceSection() {
                 
                 <div className={`ml-12 md:ml-0 ${index % 2 === 0 ? 'md:w-1/2 md:pr-8' : 'md:w-1/2 md:ml-1/2 md:pl-8'}`}>
                   <motion.div 
-                    className="glass-effect rounded-xl p-6 neon-border"
+                    className="terminal-window"
                     whileHover={{ scale: 1.02 }}
                     data-testid={`card-experience-${index}`}
                   >
-                    <h3 className={`text-xl font-semibold mb-2 ${index % 2 === 0 ? 'text-primary' : 'text-secondary'}`}>
-                      {exp.title}
-                    </h3>
-                    <p className={`mb-2 ${index % 2 === 0 ? 'text-secondary' : 'text-accent'}`}>
-                      {exp.company}
-                    </p>
-                    <p className="text-sm text-muted-foreground mb-4">{exp.period}</p>
-                    <ul className="text-muted-foreground space-y-2">
-                      {exp.points.map((point, pointIndex) => (
-                        <li key={pointIndex}>• {point}</li>
-                      ))}
-                    </ul>
+                    <div className="terminal-header">
+                      <div className="terminal-dots">
+                        <div className="terminal-dot red"></div>
+                        <div className="terminal-dot yellow"></div>
+                        <div className="terminal-dot green"></div>
+                      </div>
+                      <div className="terminal-title">experience_{index + 1}.log</div>
+                    </div>
+                    <div className="terminal-content">
+                      <div className="git-commit">
+                        <span className="git-hash">#{(index + 1).toString().padStart(3, '0')}</span>
+                        <span className="git-message">{exp.title}</span>
+                      </div>
+                      <div className="console-log">
+                        <span className="log-level log-info">[INFO]</span>
+                        <span className={index % 2 === 0 ? 'text-secondary' : 'text-accent'}>
+                          {exp.company}
+                        </span>
+                      </div>
+                      <div className="console-log">
+                        <span className="log-level log-warn">[DURATION]</span>
+                        <span>{exp.period}</span>
+                      </div>
+                      <div className="mt-4">
+                        {exp.points.map((point, pointIndex) => (
+                          <div key={pointIndex} className="console-log">
+                            <span className="log-level log-success">[ACHIEVEMENT]</span>
+                            <span>{point}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </motion.div>
                 </div>
               </motion.div>

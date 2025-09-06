@@ -184,6 +184,170 @@
     );
     animation: matrixScroll 3s linear infinite;
   }
+  
+  .terminal-window {
+    background: #1e1e1e;
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+  
+  .terminal-header {
+    background: #2d2d2d;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+  }
+  
+  .terminal-dots {
+    display: flex;
+    gap: 6px;
+  }
+  
+  .terminal-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+  
+  .terminal-dot.red { background: #ff5f56; }
+  .terminal-dot.yellow { background: #ffbd2e; }
+  .terminal-dot.green { background: #27ca3f; }
+  
+  .terminal-title {
+    color: #c4c4c4;
+    font-size: 13px;
+    font-family: 'Fira Code', monospace;
+    margin-left: 12px;
+  }
+  
+  .terminal-content {
+    background: #1e1e1e;
+    padding: 16px;
+    font-family: 'Fira Code', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #c4c4c4;
+    min-height: 120px;
+  }
+  
+  .terminal-line {
+    margin-bottom: 4px;
+  }
+  
+  .terminal-prompt {
+    color: #27ca3f;
+  }
+  
+  .terminal-command {
+    color: #78dce8;
+  }
+  
+  .terminal-output {
+    color: #fc9867;
+  }
+  
+  .terminal-comment {
+    color: #7c7c7c;
+  }
+  
+  .vs-code-theme {
+    background: #1e1e1e;
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
+    font-family: 'Fira Code', monospace;
+  }
+  
+  .vs-code-header {
+    background: #2d2d2d;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+  }
+  
+  .vs-code-tab {
+    background: #3c3c3c;
+    color: #c4c4c4;
+    padding: 6px 12px;
+    border-radius: 4px 4px 0 0;
+    font-size: 12px;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-bottom: none;
+  }
+  
+  .vs-code-tab.active {
+    background: #1e1e1e;
+    color: #78dce8;
+  }
+  
+  .vs-code-content {
+    background: #1e1e1e;
+    padding: 16px;
+    color: #c4c4c4;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .code-syntax .keyword { color: #c792ea; }
+  .code-syntax .string { color: #c3e88d; }
+  .code-syntax .function { color: #82aaff; }
+  .code-syntax .comment { color: #546e7a; }
+  .code-syntax .variable { color: #eeffff; }
+  .code-syntax .number { color: #f78c6c; }
+  
+  .console-log {
+    background: #0d1117;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 6px;
+    padding: 12px;
+    font-family: 'Fira Code', monospace;
+    font-size: 13px;
+    color: #c9d1d9;
+    margin: 8px 0;
+  }
+  
+  .console-log .log-level {
+    font-weight: bold;
+    margin-right: 8px;
+  }
+  
+  .console-log .log-info { color: #58a6ff; }
+  .console-log .log-warn { color: #d29922; }
+  .console-log .log-error { color: #f85149; }
+  .console-log .log-success { color: #3fb950; }
+  
+  .git-commit {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px;
+    border-left: 3px solid rgba(99, 102, 241, 0.5);
+    background: rgba(99, 102, 241, 0.05);
+    border-radius: 0 4px 4px 0;
+    margin: 6px 0;
+    font-family: 'Fira Code', monospace;
+    font-size: 13px;
+  }
+  
+  .git-hash {
+    color: #f78c6c;
+    font-weight: bold;
+  }
+  
+  .git-message {
+    color: #c4c4c4;
+  }
+  
+  .git-author {
+    color: #78dce8;
+    font-size: 11px;
+  }
 }
 
 @layer utilities {

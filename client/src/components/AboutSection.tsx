@@ -15,25 +15,42 @@ export default function AboutSection() {
         </motion.h2>
         
         <motion.div 
-          className="glass-effect rounded-2xl p-8 md:p-12 neon-border matrix-bg relative overflow-hidden"
+          className="vs-code-theme"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
           whileHover={{ scale: 1.02 }}
         >
-          <div className="absolute top-4 left-4 text-primary/30 font-mono text-sm">
-            <span className="text-secondary">const</span> <span className="text-accent">developer</span> = {'{'}
+          <div className="vs-code-header">
+            <div className="vs-code-tab active">about_me.js</div>
+            <div className="vs-code-tab">skills.json</div>
+            <div className="vs-code-tab">projects.md</div>
           </div>
-          <div className="absolute bottom-4 right-4 text-primary/30 font-mono text-sm">
-            {'};'}
-          </div>
-          <div className="relative z-10">
-            <p className="text-lg text-muted-foreground leading-relaxed text-center" data-testid="text-about-description">
-              <span className="text-primary font-mono">&quot;</span>
-              Hi, I'm Ashima 👋 — a Computer Science undergrad who loves turning ideas into interactive and meaningful digital experiences. Whether it's crafting sleek user interfaces or solving tough programming problems, I enjoy building projects that combine creativity with technology. Always eager to learn, experiment, and contribute to impactful solutions.
-              <span className="text-primary font-mono">&quot;</span>
-            </p>
+          <div className="vs-code-content code-syntax">
+            <div className="mb-4">
+              <span className="keyword">const</span> <span className="variable">developer</span> = {'{'}
+            </div>
+            <div className="ml-4 mb-2">
+              <span className="variable">name</span>: <span className="string">"Ashima Tiwari"</span>,
+            </div>
+            <div className="ml-4 mb-2">
+              <span className="variable">role</span>: <span className="string">"Frontend Developer | Software Developer"</span>,
+            </div>
+            <div className="ml-4 mb-2">
+              <span className="variable">passion</span>: <span className="string">"Turning ideas into interactive digital experiences"</span>,
+            </div>
+            <div className="ml-4 mb-2">
+              <span className="variable">expertise</span>: [<span className="string">"UI/UX"</span>, <span className="string">"Problem Solving"</span>, <span className="string">"Creative Technology"</span>],
+            </div>
+            <div className="ml-4 mb-2">
+              <span className="variable">mindset</span>: <span className="string">"Always eager to learn and experiment"</span>,
+            </div>
+            <div className="ml-4 mb-4">
+              <span className="variable">goal</span>: <span className="string">"Contributing to impactful solutions"</span>
+            </div>
+            <div>{'};'}</div>
+            <div className="mt-4 comment">// CS undergrad who loves building meaningful projects 🚀</div>
           </div>
         </motion.div>
       </div>
